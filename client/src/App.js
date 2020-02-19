@@ -4,13 +4,24 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 
+const maxWidth = 960;
+
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/projects' component={Projects} />
-        <Route path='/about' component={About} />
+        <Route
+          exact path='/'
+          render={props => <Home {...props} maxWidth={maxWidth} />}
+        />
+        <Route
+          path='/projects'
+          render={props => <Projects {...props} maxWidth={maxWidth} />}
+        />
+        <Route
+          path='/about'
+          render={props => <About {...props} maxWidth={maxWidth} />}
+        />
       </Switch>
     </Router>
   );

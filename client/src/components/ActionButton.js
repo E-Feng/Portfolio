@@ -2,14 +2,19 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-function PauseButton(props) {
+function ActionButton(props) {
   const handleClick = e => {
-    props.setLoop(!props.isLoop);
+    if (props.name === 'RESET') {
+      //props.action(!props.state);
+      props.action(true);
+    } else {
+    props.action(!props.state);
+    }
   };
 
   return (
     <Button className={props.className} type='button' onClick={handleClick}>
-      PAUSE &#10074;&#10074;
+      {props.name}
     </Button>
   );
 }
@@ -19,6 +24,7 @@ const Button = styled.button`
   background: #000;
   color: #fff;
   font-size: 18px;
+  height: 30px;
   opacity: 0.5;
   border-radius: 10px;
   user-select: none;
@@ -29,4 +35,4 @@ const Button = styled.button`
   }
 `;
 
-export default PauseButton;
+export default ActionButton;

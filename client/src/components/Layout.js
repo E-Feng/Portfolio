@@ -6,8 +6,9 @@ import styled from 'styled-components';
 function Layout(props) {
   return (
     <Container>
-      <NavBar />
-      <Children>{props.children}</Children>
+      <NavBar maxWidth={props.maxWidth} />
+      <Border />
+      <Children >{props.children}</Children>
     </Container>
   );
 }
@@ -19,13 +20,19 @@ const Container = styled.div`
   height: 100vh;
 `;
 
+const Border = styled.div`
+  min-height: 2px;
+  height: 2px;
+  width: 100%;
+  margin: 0;
+  background: #fff;
+`;
+
 const Children = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   flex-grow: 1;
+  width: 100%;
 `;
 
 export default Layout;
