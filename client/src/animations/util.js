@@ -3,8 +3,13 @@ export function getCanvasDims() {
     .parentElement;
   canvasDiv.style.display = 'flex';
 
+  console.log(canvasDiv.clientHeight);
+  console.log(canvasDiv.parentElement.clientHeight);
+
   const width = canvasDiv.parentElement.clientWidth;
-  const height = canvasDiv.parentElement.clientHeight;
+  const height = canvasDiv.parentElement.clientHeight || canvasDiv.clientHeight;
+
+  console.log(height);
 
   return [width, height];
 }
