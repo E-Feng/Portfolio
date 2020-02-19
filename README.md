@@ -8,13 +8,13 @@ AWS-EC2 hosted - http://elvinfeng.com
 ## Technology/Stack
 
 ### Frontend
-HTML5
-CSS3
-JavaScript
+HTML5\
+CSS3\
+JavaScript\
 React
 
 ### Backend
-Node.js/Express
+Node.js/Express\
 MongoDB
 
 ### Deployment
