@@ -17,6 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: -webkit-fill-available;
   height: 100vh;
 `;
 
