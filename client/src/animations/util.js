@@ -3,14 +3,11 @@ export function getCanvasDims() {
     .parentElement;
   canvasDiv.style.display = 'flex';
 
-  console.log(canvasDiv.clientHeight);
-  console.log(canvasDiv.parentElement.clientHeight);
-  console.log(canvasDiv.parentElement.parentElement.clientHeight);
-
   const width = canvasDiv.parentElement.clientWidth;
-  const height = canvasDiv.parentElement.clientHeight || canvasDiv.clientHeight;
 
-  console.log(height);
+  const childHeight = canvasDiv.parentElement.clientHeight;
+  const parentHeight = canvasDiv.parentElement.parentElement.clientHeight;
+  const height = Math.max(childHeight, parentHeight);
 
   return [width, height];
 }
