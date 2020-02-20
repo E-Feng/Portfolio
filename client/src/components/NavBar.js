@@ -7,15 +7,15 @@ function NavBar(props) {
   return (
     <NavContainer maxWidth={props.maxWidth}>
       <NavLinks>
-        <Link to='/'>
-          <li>Home</li>
-        </Link>
-        <Link to='/projects'>
-          <li>Projects</li>
-        </Link>
-        <Link to='/about'>
-          <li>About</li>
-        </Link>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/projects'>Projects</Link>
+        </li>
+        <li>
+          <Link to='/about'>About</Link>
+        </li>
       </NavLinks>
       <Icons>
         <li>
@@ -49,15 +49,7 @@ const NavContainer = styled.div`
   ul {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-
-    ul {
-      margin: 0.75rem 0.5rem;
-    }
+    margin: 1.25rem 0.5rem;
   }
 `;
 
@@ -65,8 +57,9 @@ const NavLinks = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 
-  a {
+  li a {
     position: relative;
     margin: 0 0.5rem;
     font-size: 20px;
@@ -83,12 +76,20 @@ const NavLinks = styled.ul`
       background: #ffffff;
       bottom: 0;
       left: 0;
+      margin-bottom: -4px;
       transition: 0.2s;
     }
 
     :hover:after,
     :visited:hover:after {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    li a {
+      margin: 0 0.4rem;
+      font-size: min(20px, 5vw);
     }
   }
 `;
@@ -108,6 +109,16 @@ const Icons = styled.ul`
     a {
       font-size: 24px;
       color: #fff;
+    }
+  }
+
+  @media (max-width: 450px) {
+    li {
+      padding: 0 0.3em;
+
+      a {
+        font-size: min(24px, 5vw);
+      }
     }
   }
 `;

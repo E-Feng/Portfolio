@@ -3,11 +3,14 @@ export function getCanvasDims() {
     .parentElement;
   canvasDiv.style.display = 'flex';
 
-  const width = canvasDiv.parentElement.clientWidth;
+  // Calculating proper canvas height using children of root
+  const root = document.getElementById('root');
+  const children = root.childNodes[0].childNodes;
+  const totalHeight = root.clientHeight;
+  const navHeight = children[0].scrollHeight + children[1].scrollHeight;
 
-  const childHeight = canvasDiv.parentElement.clientHeight;
-  const parentHeight = canvasDiv.parentElement.parentElement.clientHeight;
-  const height = Math.max(childHeight, parentHeight);
+  const width = root.clientWidth;
+  const height = totalHeight - navHeight;
 
   return [width, height];
 }

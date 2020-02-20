@@ -86,7 +86,6 @@ function Rain(p5) {
     p5.angleMode(p5.DEGREES);
 
     rad = Math.min(100, Math.round(width/8));
-
     nDrops = Math.round((width * height) / 1500);
 
     initRain(nDrops);
@@ -124,6 +123,8 @@ function Rain(p5) {
 
   p5.windowResized = () => {
     const [width, height] = util.getCanvasDims();
+    rad = Math.min(100, Math.round(width/8));
+    nDrops = Math.round((width * height) / 1500);
     p5.resizeCanvas(width, height);
   };
 }
