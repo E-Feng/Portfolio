@@ -12,7 +12,10 @@ export function getCanvasDims() {
   const width = root.clientWidth;
   const height = totalHeight - navHeight;
 
-  console.log(totalHeight);
+  console.log('client', root.clientHeight);
+  console.log('offset', root.offsetHeight);
+  console.log('scroll', root.scrollHeight);
+  console.log('inner', window.innerHeight);
 
   return [width, height];
 }
