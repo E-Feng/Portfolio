@@ -5,6 +5,7 @@ export function getCanvasDims() {
 
   console.log(canvasDiv.clientHeight);
   console.log(canvasDiv.parentElement.clientHeight);
+  console.log(canvasDiv.parentElement.parentElement.clientHeight);
 
   const width = canvasDiv.parentElement.clientWidth;
   const height = canvasDiv.parentElement.clientHeight || canvasDiv.clientHeight;
