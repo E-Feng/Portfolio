@@ -46,13 +46,11 @@ const Sketch = styled.div`
 `;
 
 const PauseButton = styled(ActionButton)`
-  position: absolute;
   top: 1rem;
   right: 1rem;
 `;
 
 const ResetButton = styled(ActionButton)`
-  position: absolute;
   top: 3.5rem;
   right: 1rem;
 `;

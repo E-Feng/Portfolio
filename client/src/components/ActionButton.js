@@ -23,15 +23,16 @@ const Button = styled.button`
   position: absolute;
   background: #000;
   color: #fff;
+  border-width: 2px;
   font-size: 18px;
   height: 30px;
-  opacity: 0.5;
+  opacity: 0.7;
   border-radius: 10px;
   user-select: none;
 
   :hover {
     cursor: pointer;
-    opacity: 0.75;
+    opacity: 0.9;
   }
 `;
 

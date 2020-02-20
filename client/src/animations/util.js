@@ -12,6 +12,8 @@ export function getCanvasDims() {
   const width = root.clientWidth;
   const height = totalHeight - navHeight;
 
+  console.log(totalHeight);
+
   return [width, height];
 }
 
