@@ -4,7 +4,6 @@ function Rain(p5) {
   // Raindrop function/class
   function Drop(p5) {
     const zMax = 5;
-    const rad = 100;
 
     this.initDrop = () => {
       this.x = p5.random(p5.width);
@@ -63,6 +62,7 @@ function Rain(p5) {
   let walls = [];
   let allowClick = true;
   let nDrops;
+  let rad;
 
   function initRain(nDrops) {
     drops = [];
@@ -85,7 +85,9 @@ function Rain(p5) {
     p5.noFill();
     p5.angleMode(p5.DEGREES);
 
-    nDrops = Math.round((width * height) / 2000);
+    rad = Math.min(100, Math.round(width/8));
+
+    nDrops = Math.round((width * height) / 1500);
 
     initRain(nDrops);
   };
