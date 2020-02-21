@@ -6,19 +6,11 @@ export function getCanvasDims() {
   // Calculating proper canvas height using children of root
   const root = document.getElementById('root');
   const children = root.childNodes[0].childNodes;
-  //const totalHeight = root.clientHeight;
-  const totalHeight = window.innerHeight;
+  const totalHeight = root.clientHeight;
   const navHeight = children[0].scrollHeight + children[1].scrollHeight;
 
   const width = root.clientWidth;
   const height = totalHeight - navHeight;
-
-  console.log('client', root.clientHeight);
-  console.log('offset', root.offsetHeight);
-  console.log('scroll', root.scrollHeight);
-  console.log('inner', window.innerHeight);
-
-  document.exitFullscreen();
 
   return [width, height];
 }
