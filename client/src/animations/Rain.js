@@ -58,6 +58,8 @@ function Rain(p5) {
   }
 
   console.log('Starting up Rain p5js...');
+  let width;
+  let height;
   let drops = [];
   let walls = [];
   let allowClick = true;
@@ -74,8 +76,7 @@ function Rain(p5) {
   }
 
   p5.setup = () => {
-    console.log('Running initial Rain p5js setup...');
-    const [width, height] = util.getCanvasDims();
+    [width, height] = util.getCanvasDims();
 
     p5.createCanvas(width, height);
     p5.background(0);
@@ -98,7 +99,7 @@ function Rain(p5) {
     });
   };
 
-  p5.mouseClicked = () => {
+  p5.mousePressed = () => {
     if (allowClick) {
       walls.push([p5.mouseX, p5.mouseY]);
       if (p5.mouseX + p5.mouseY === 0) {
@@ -122,7 +123,7 @@ function Rain(p5) {
   };
 
   p5.windowResized = () => {
-    const [width, height] = util.getCanvasDims();
+    [width, height] = util.getCanvasDims();
     rad = Math.min(100, Math.round(width/8));
     nDrops = Math.round((width * height) / 1500);
     p5.resizeCanvas(width, height);

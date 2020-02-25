@@ -5,10 +5,9 @@ import styled from 'styled-components';
 function ActionButton(props) {
   const handleClick = e => {
     if (props.name === 'RESET') {
-      //props.action(!props.state);
       props.action(true);
     } else {
-    props.action(!props.state);
+      props.action(!props.state);
     }
   };
 
@@ -20,19 +19,23 @@ function ActionButton(props) {
 }
 
 const Button = styled.button`
-  position: absolute;
   background: #000;
   color: #fff;
   border-width: 2px;
-  font-size: 18px;
+  font-size: 16px;
   height: 30px;
   opacity: 0.7;
   border-radius: 10px;
   user-select: none;
+  margin: 0 2px;
 
   :hover {
     cursor: pointer;
     opacity: 0.9;
+  }
+
+  @media (max-width: 450px) {
+    font-size: min(20px, 4vw);
   }
 `;
 
