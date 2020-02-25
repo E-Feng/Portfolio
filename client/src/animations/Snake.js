@@ -72,7 +72,6 @@ function Snake(p5) {
           (best, x, i, arr) => (x < arr[best] ? i : best),
           0
         );
-        console.log(spotDistNorm, index);
 
         this.setDir(neighbors[index][0], neighbors[index][1]);
       }
