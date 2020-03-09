@@ -1,25 +1,23 @@
 {
   "name": "efportfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Portfolio - Elvin Feng",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd api && npm run server\" \"cd client && npm start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E-Feng/Portfolio.git"
   },
   "author": "Elvin Feng",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.1",
-    "react-p5-wrapper": "^2.0.0",
-    "react-router-dom": "^5.1.2"
+  "bugs": {
+    "url": "https://github.com/E-Feng/Portfolio/issues"
   },
-  "devDependencies": {
-    "concurrently": "^5.1.0",
-    "nodemon": "^2.0.2"
+  "homepage": "https://github.com/E-Feng/Portfolio#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0"
   }
 }

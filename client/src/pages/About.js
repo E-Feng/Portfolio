@@ -73,7 +73,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
+  margin: 15px 5px;
 
   h2 {
     margin: 20px 0 10px 0;
@@ -113,7 +113,7 @@ const SkillList = styled.ul`
   padding: 0;
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
   }

@@ -111,10 +111,13 @@ function Snake(p5) {
       p5.rect(this.x, this.y, s, s);
       let x = this.x;
       let y = this.y;
+      let color = 255;
       this.body.forEach(seg => {
         x += seg[0];
         y += seg[1];
+        p5.stroke(color);
         p5.rect(x, y, s, s);
+        color = Math.max(50, color - 0.5);
       });
 
       // Drawing food
@@ -185,6 +188,7 @@ function Snake(p5) {
     p5.strokeWeight(1);
     p5.translate(tWidth, tHeight);
     p5.rect(0, 0, inWidth, inHeight);
+    p5.stroke(255);
     p5.strokeWeight(2);
 
     snake.show();
