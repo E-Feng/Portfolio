@@ -18,5 +18,5 @@ Node.js/Express\
 MongoDB
 
 ### Deployment
-AWS-EC2
+AWS-EC2\
 Docker
