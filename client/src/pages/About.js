@@ -12,9 +12,11 @@ function About(props) {
     'JavaScript',
     'React',
     'NodeJS',
-    'MySQL',
-    'MongoDB',
     'Python',
+    'MySQL',
+    'Postgresql',
+    'MongoDB',
+    'Docker',
     'MATLAB'
   ];
   const skillList = skillData.map(skill => {

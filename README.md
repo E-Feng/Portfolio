@@ -19,3 +19,4 @@ MongoDB
 
 ### Deployment
 AWS-EC2
+Docker

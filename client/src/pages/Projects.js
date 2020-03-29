@@ -7,6 +7,21 @@ import styled from 'styled-components';
 function Projects(props) {
   const projectData = [
     {
+      title: 'Porfolio',
+      imgsrc: '/previews/portfolio.png',
+      desc: `My fun and interactive personal portfolio showcasing my 
+        projects. Creating the sketches involved a lot of fun problem
+        solving such as a simple snake AI. I plan to add more fun sketches
+        as ideas come across, I hope you enjoy!`,
+      stack: {
+        Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
+        Back: ['Node.js', 'Express', 'MongoDB'],
+        DevOps: ['AWS-EC2', 'Docker']
+      },
+      github: 'https://github.com/E-Feng/Portfolio',
+      siteURL: 'http://elvinfeng.com',
+    },
+    {
       title: 'Fantasy Basketball Analytics',
       imgsrc: '/previews/fantasyanalytics.png',
       desc: `Fantasy Basketball Analytics site providing extra information 
@@ -14,6 +29,11 @@ function Projects(props) {
         Aggregated statistics are shown with easy to read visual displays. 
         My project from the ground up, started with data analysis in Python 
         and eventually deployed to the web from vanilla JavaScript to React.`,
+      stack: {
+        Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
+        Back: ['Node.js', 'Express', 'MySQL', 'Python', 'MongoDB'],
+        DevOps: ['GH-Pages', 'Heroku']
+      },
       github: 'https://github.com/E-Feng/FantasyBBallAnalytics',
       siteURL: 'http://fantasyanalytics.info'
     }
@@ -24,6 +44,7 @@ function Projects(props) {
         title={proj.title}
         imgsrc={proj.imgsrc}
         desc={proj.desc}
+        stack={proj.stack}
         github={proj.github}
         key={proj.github}
         siteURL={proj.siteURL}
