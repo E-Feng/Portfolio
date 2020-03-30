@@ -15,11 +15,11 @@
 
 # misc
 .DS_Store
-/api/.env
-/api/.env.local
-/api/.env.development.local
-/api/.env.test.local
-/api/.env.production.local
+/api/config/.env
+/api/config/.env.local
+/api/config/.env.development.local
+/api/config/.env.test.local
+/api/config/.env.production.local
 
 /client/.env
 /client/.env.local
