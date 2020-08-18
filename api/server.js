@@ -1,12 +1,40 @@
 const express = require('express');
+const session = require("express-session");
 const path = require('path');
+const passport = require('passport');
+const SteamStrategy = require('passport-steam').Strategy;
 const connectDB = require('./config/db');
 require('dotenv').config({ path: './config/.env' });
 
+
+// Setting up express app
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 const environment = process.env.NODE_ENV || 'development';
+
+app.use(
+  session({
+    secret: "Secret",
+    name: "Test",
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+
+// Constants
+let returnURL;
+let realm;
+
+if (environment === 'development') {
+  returnURL = 'http://localhost:5000/auth/steam/';
+  realm = 'http://localhost:5000/';
+} else {
+  returnURL = 'http://elvinfeng.com/auth/steam/';
+  realm = 'http://elvinfeng.com';
+}
+
 
 // CORS
 app.use((req, res, next) => {
@@ -18,12 +46,44 @@ app.use((req, res, next) => {
   next();
 });
 
+
+// Setting up Steam OID with passportjs
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
+
+passport.use(
+  new SteamStrategy(
+    {
+      returnURL: returnURL,
+      realm: realm,
+      apiKey: process.env.STEAM_KEY
+    },
+    (identifier, profile, done) => {
+      console.log("Successful log in from Steam");
+      console.log("Username", profile.displayName);
+      return done(null, profile);
+    }
+  )
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 // Connect to MongoDB
 connectDB();
+
 
 // Routes
 app.use(express.json());
 app.use('/api/message', require('./routes/message'));
+app.use('/auth/', require('./routes/auth'));
+
 
 // Serving content
 if (environment === 'development') {

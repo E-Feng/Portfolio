@@ -37,7 +37,10 @@ const Container = styled.div`
   border-radius: 20px;
 
   h2 {
+    width: 75%;
     margin: 10px 0;
+    text-align: center;
+    border-bottom: 2px #ffffff solid;
   }
 
   p {
@@ -58,13 +61,14 @@ const Body = styled.div`
   flex-direction: row;
 
   p {
-    padding: 0 0.25em;
+    margin: 0 2em;
   }
 `;
 
 const Stack = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 0 0.25em;
 `;
 
 const Links = styled.div`

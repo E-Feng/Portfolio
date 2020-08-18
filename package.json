@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/E-Feng/Portfolio#readme",
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.2.0",
+    "express-session": "^1.17.1",
+    "passport": "^0.4.1",
+    "passport-steam": "^1.0.14"
   }
 }

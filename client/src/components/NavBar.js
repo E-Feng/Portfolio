@@ -6,17 +6,24 @@ import styled from 'styled-components';
 function NavBar(props) {
   return (
     <NavContainer maxWidth={props.maxWidth}>
-      <NavLinks>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/projects'>Projects</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </NavLinks>
+      <LinksContainer>
+        <LinksList>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/projects'>Projects</Link>
+          </li>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+        </LinksList>
+        <SubLinksList>
+          <li>
+            <Link to='/patreon'>Patreon</Link>
+          </li>
+        </SubLinksList>
+      </LinksContainer>
       <Icons>
         <li>
           <a href='https://github.com/E-Feng/Portfolio'>
@@ -43,26 +50,24 @@ const NavContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  max-width: ${props => props.maxWidth}px;
+  max-width: ${(props) => props.maxWidth}px;
   margin: 0 auto;
+  padding: 0.75rem 0;
 
   ul {
     list-style: none;
     padding: 0;
-    margin: 1.25rem 0.5rem;
+    margin: 0.25rem 0.5rem;
   }
 `;
 
-const NavLinks = styled.ul`
+const LinksContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 
-  li a {
+  ul li a {
     position: relative;
     margin: 0 0.5rem;
-    font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
     color: #ffffff;
@@ -92,6 +97,25 @@ const NavLinks = styled.ul`
       font-size: min(20px, 5vw);
     }
   }
+`;
+
+const LinksList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+  font-size: 20px;
+`;
+
+const SubLinksList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+  font-size: 14px;
+  opacity: 0.7;
 `;
 
 const Icons = styled.ul`

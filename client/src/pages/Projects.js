@@ -16,7 +16,7 @@ function Projects(props) {
       stack: {
         Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
         Back: ['Node.js', 'Express', 'MongoDB'],
-        DevOps: ['AWS-EC2', 'Docker']
+        DevOps: ['AWS-EC2', 'Docker'],
       },
       github: 'https://github.com/E-Feng/Portfolio',
       siteURL: 'http://elvinfeng.com',
@@ -32,13 +32,32 @@ function Projects(props) {
       stack: {
         Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
         Back: ['Node.js', 'Express', 'MySQL', 'Python', 'MongoDB'],
-        DevOps: ['GH-Pages', 'Heroku']
+        DevOps: ['GH-Pages', 'Heroku'],
       },
       github: 'https://github.com/E-Feng/FantasyBBallAnalytics',
-      siteURL: 'http://fantasyanalytics.info'
-    }
+      siteURL: 'http://fantasyanalytics.info',
+    },
+    {
+      title: 'Escape The Undying Dead',
+      imgsrc: '/previews/escape.png',
+      desc: `Escape the Undying Dead is a series of custom game mods created in Dota 2. 
+        It is a co-op escape game relying on pattern recognition, reflexes, and teamwork 
+        to dodge obstacles and solve puzzles. Three full maps of interesting and fun 
+        puzzles have been created and garnered 400k+ downloads. Firebase has been integrated 
+        to provide a leaderboard for timed speedruns. Steam and Patreon OAuth API have also been 
+        utilized to automatically provide authentication for patrons to receive extra 
+        ingame items. I will continue to develop maps as long as there are interesting 
+        ideas and fan interest.`,
+      stack: {
+        Front: ['XML', 'CSS', 'JavaScript'],
+        Back: ['Lua'],
+        Apps: ['Firebase', 'Patreon', 'Steam'],
+      },
+      github: 'https://github.com/E-Feng/DOTA_Escape1',
+    },
   ];
-  const projectList = projectData.map(proj => {
+
+  const projectList = projectData.map((proj) => {
     return (
       <ProjectCard
         title={proj.title}
@@ -66,7 +85,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: ${props => props.maxWidth}px;
+  max-width: ${(props) => props.maxWidth}px;
   margin: 15px auto 0 auto;
 
   h1 {

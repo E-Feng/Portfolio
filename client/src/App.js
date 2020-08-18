@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
+import Patreon from './pages/Patreon';
 
 const maxWidth = 960;
 
@@ -21,6 +22,10 @@ function App() {
         <Route
           path='/about'
           render={props => <About {...props} maxWidth={maxWidth} />}
+        />
+        <Route 
+          path='/patreon'
+          render={props => <Patreon {...props} maxWidth={maxWidth} />}
         />
       </Switch>
     </Router>
