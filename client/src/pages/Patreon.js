@@ -16,8 +16,8 @@ function Patreon(props) {
   const baseURL = 'https://patreon.com/oauth2/authorize?response_type=code';
   const clientID =
     'CgeJe4-OBtoHV6X6Sn9HJLpwOklY3Zi5muhjSkMTK_Phfuck3Eg7UsSLBHsMxKyV';
-  //const redirectURL = 'http://elvinfeng.com/auth/patreon/';
-  const redirectURL = 'http://localhost:5000/auth/patreon/';
+  const redirectURL = 'http://elvinfeng.com/auth/patreon/';
+  //const redirectURL = 'http://localhost:5000/auth/patreon/';
 
   const patreonURL =
     baseURL + '&client_id=' + clientID + '&redirect_uri=' + redirectURL;
