@@ -1,11 +1,10 @@
 FROM node:12-alpine
 
 # Directory for app in container and installation
-WORKDIR /usr/src/app
+WORKDIR /api
 COPY package*.json ./
-RUN npm install --silent
+RUN npm install 
+
 COPY . .
 ENV NODE_ENV=production
 EXPOSE 5000
-
-CMD ["npm", "start"]
