@@ -8,7 +8,7 @@ COPY . .
 RUN npm run build
 
 # Moving over to 2nd container
-FROM nginx:1.16.0-alpine
+FROM nginx:1.18.0-alpine
 COPY --from=builder /usr/src/app/client/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d
