@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  api:
+    container_name: docker-api
+    restart: always
+    build: ./api
+    command: npm start
+    ports:
+      - '5000:5000'
+  client:
+    container_name: docker-client
+    restart: always
+    build:
+      context: ./client
+    ports:
+      - '80:80'
+    depends_on:
+      - api
