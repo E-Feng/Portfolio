@@ -5,6 +5,7 @@ WORKDIR /usr/src/app/client
 COPY package*.json ./
 RUN npm install --silent
 COPY . .
+ENV GENERATE_SOURCEMAP false
 RUN npm run build
 
 # Moving over to 2nd container
