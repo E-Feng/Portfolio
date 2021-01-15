@@ -9,11 +9,13 @@ services:
       context: ./api
     command: npm start
     labels:
-      - traefik.enable=true
+      - traefik.enable=false
       - traefik.http.routers.server.rule=Host(`server.elvinfeng.com`) 
       - traefik.http.routers.server.tls=true
       - traefik.http.routers.server.tls.certresolver=lets-encrypt
-      - traefik.port=80
+      - traefik.port=5000
+    ports:
+      - '5000:5000'
     networks:
       - internal
       - traefik_web
@@ -24,11 +26,13 @@ services:
     build:
       context: ./client
     labels:
-      - traefik.enable=true
+      - traefik.enable=false
       - traefik.http.routers.client.rule=Host(`elvinfeng.com`) 
       - traefik.http.routers.client.tls=true
       - traefik.http.routers.client.tls.certresolver=lets-encrypt
       - traefik.port=80
+    ports:
+      - '80:80'
     networks:
       - internal
       - traefik_web
