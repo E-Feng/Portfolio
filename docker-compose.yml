@@ -30,9 +30,9 @@ services:
       - traefik.http.routers.client.rule=Host(`elvinfeng.com`) 
       - traefik.http.routers.client.tls=true
       - traefik.http.routers.client.tls.certresolver=lets-encrypt
-      - traefik.port=80
+      - traefik.port=8080
     ports:
-      - '80:80'
+      - '8080:8080'
     networks:
       - internal
       - traefik_web
