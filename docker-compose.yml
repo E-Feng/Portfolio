@@ -1,39 +1,42 @@
 version: '3.7'
 
 services:
-  api:
-    container_name: docker-api
+  server:
+    image: elvinfeng/portfolio:server
+    container_name: portfolio-server
     restart: always
-    build: ./api
+    build:
+      context: ./api
     command: npm start
     labels:
       - traefik.enable=true
-      - traefik.http.routers.client.rule=Host(`api.elvinfeng.com`) 
-      - traefik.http.routers.blog.tls=true
-      - traefik.http.routers.blog.tls.certresolver=lets-encrypt
+      - traefik.http.routers.server.rule=Host(`server.elvinfeng.com`) 
+      - traefik.http.routers.server.tls=true
+      - traefik.http.routers.server.tls.certresolver=lets-encrypt
       - traefik.port=80
     networks:
       - internal
-      - web
+      - traefik_web
   client:
-    container_name: docker-client
+    image: elvinfeng/portfolio:client
+    container_name: portfolio-client
     restart: always
     build:
       context: ./client
     labels:
       - traefik.enable=true
       - traefik.http.routers.client.rule=Host(`elvinfeng.com`) 
-      - traefik.http.routers.blog.tls=true
-      - traefik.http.routers.blog.tls.certresolver=lets-encrypt
+      - traefik.http.routers.client.tls=true
+      - traefik.http.routers.client.tls.certresolver=lets-encrypt
       - traefik.port=80
     networks:
       - internal
-      - web
+      - traefik_web
     depends_on:
-      - api
+      - server
 
 networks:
-  web:
+  traefik_web:
     external: true
   internal:
     external: false

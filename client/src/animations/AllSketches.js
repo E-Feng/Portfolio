@@ -9,5 +9,3 @@ export const SKETCH_INDEX = {
   1: "Snake",
   2: "Maze"
 }
-
-export default { Sketches, SKETCH_INDEX };
