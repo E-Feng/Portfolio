@@ -9,7 +9,7 @@ services:
       context: ./api
     command: npm start
     labels:
-      - traefik.enable=false
+      - traefik.enable=true
       - traefik.http.routers.server.rule=Host(`server.elvinfeng.com`) 
       - traefik.http.routers.server.tls=true
       - traefik.http.routers.server.tls.certresolver=lets-encrypt
@@ -26,7 +26,7 @@ services:
     build:
       context: ./client
     labels:
-      - traefik.enable=false
+      - traefik.enable=true
       - traefik.http.routers.client.rule=Host(`elvinfeng.com`) 
       - traefik.http.routers.client.tls=true
       - traefik.http.routers.client.tls.certresolver=lets-encrypt
