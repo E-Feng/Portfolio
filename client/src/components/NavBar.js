@@ -20,7 +20,7 @@ function NavBar(props) {
         </LinksList>
         <SubLinksList>
           <li>
-            <Link to='/patreon'>Patreon</Link>
+            <a href='https://fantasy.elvinfeng.com'>Fantasy</a>
           </li>
         </SubLinksList>
       </LinksContainer>

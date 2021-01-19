@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:15.5.1-alpine3.11
 
 # Directory for app in container and installation
 WORKDIR /api

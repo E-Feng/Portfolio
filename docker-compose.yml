@@ -14,11 +14,9 @@ services:
       - traefik.http.routers.server.tls=true
       - traefik.http.routers.server.tls.certresolver=lets-encrypt
       - traefik.port=5000
-    ports:
-      - '5000:5000'
     networks:
       - internal
-      - traefik_web
+      - traefik_proxy
   client:
     image: elvinfeng/portfolio:client
     container_name: portfolio-client
@@ -30,17 +28,18 @@ services:
       - traefik.http.routers.client.rule=Host(`elvinfeng.com`) 
       - traefik.http.routers.client.tls=true
       - traefik.http.routers.client.tls.certresolver=lets-encrypt
-      - traefik.port=8080
-    ports:
-      - '8080:8080'
+      - traefik.port=80
     networks:
       - internal
-      - traefik_web
+      - traefik_proxy
     depends_on:
       - server
 
 networks:
-  traefik_web:
-    external: true
+  traefik_proxy:
+    external:
+      name: traefik_proxy
   internal:
     external: false
+  default:
+    driver: bridge
