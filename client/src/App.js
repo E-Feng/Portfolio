@@ -12,20 +12,21 @@ function App() {
     <Router>
       <Switch>
         <Route
-          exact path='/'
-          render={props => <Home {...props} maxWidth={maxWidth} />}
+          exact
+          path='/'
+          render={(props) => <Home {...props} maxWidth={maxWidth} />}
         />
         <Route
           path='/projects'
-          render={props => <Projects {...props} maxWidth={maxWidth} />}
+          render={(props) => <Projects {...props} maxWidth={maxWidth} />}
         />
         <Route
           path='/about'
-          render={props => <About {...props} maxWidth={maxWidth} />}
+          render={(props) => <About {...props} maxWidth={maxWidth} />}
         />
-        <Route 
+        <Route
           path='/patreon'
-          render={props => <Patreon {...props} maxWidth={maxWidth} />}
+          render={(props) => <Patreon {...props} maxWidth={maxWidth} />}
         />
       </Switch>
     </Router>
