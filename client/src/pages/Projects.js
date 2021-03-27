@@ -9,33 +9,38 @@ function Projects(props) {
     {
       title: 'Porfolio',
       imgsrc: '/previews/portfolio.png',
-      desc: `My fun and interactive personal portfolio showcasing my 
-        projects. Creating the sketches involved a lot of fun problem
-        solving such as a simple snake AI. I plan to add more fun sketches
-        as ideas come across, I hope you enjoy!`,
+      desc: `My personal portfolio showcasing my projects with an interactive 
+        homepage with various sketches. The sketches are created using the p5js 
+        library which is great for visual projects. The site also serves as the 
+        domain to all my projects, all hosted within their different containers 
+        with Traefik as a proxy. It has served as a great learning experience 
+        developing and running my own website.`,
       stack: {
         Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
         Back: ['Node.js', 'Express', 'MongoDB'],
-        DevOps: ['AWS-EC2', 'Docker'],
+        DevOps: ['Docker', 'GCP'],
       },
       github: 'https://github.com/E-Feng/Portfolio',
       siteURL: 'http://elvinfeng.com',
     },
     {
       title: 'Fantasy Basketball Analytics',
-      imgsrc: '/previews/fantasyanalytics.png',
-      desc: `Fantasy Basketball Analytics site providing extra information 
-        to help make better informed decisions for my league mates and I. 
-        Aggregated statistics are shown with easy to read visual displays. 
-        My project from the ground up, started with data analysis in Python 
-        and eventually deployed to the web from vanilla JavaScript to React.`,
+      imgsrc: '/previews/fantasy.gif',
+      desc: `My first and personal project involving my hobby of basketball and fantasy sports. 
+        Using the statistics provided by ESPN, I created some useful and interesting 
+        visuals to provide better informed decisions. These include daily alerts of high scoring 
+        games and color coded tables to show teams strengths and weaknesses. This project 
+        was first written in vanilla javascript using Windows scheduler to run Python scripts 
+        and using Github as a pseudo database. Later it was fully rewritten using React, Apache 
+        Airflow, Firebase, and hosted on Google Cloud Platform using Docker containers to adapt 
+        to new technologies.`,
       stack: {
         Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-        Back: ['Node.js', 'Express', 'MySQL', 'Python', 'MongoDB'],
-        DevOps: ['GH-Pages', 'Heroku'],
+        Back: ['Python', 'Airflow', 'Firebase'],
+        DevOps: ['Docker', 'GCP'],
       },
       github: 'https://github.com/E-Feng/FantasyBBallAnalytics',
-      siteURL: 'http://fantasyanalytics.info',
+      siteURL: 'http://fantasy.elvinfeng.com',
     },
     {
       title: 'Escape The Undying Dead',
@@ -46,13 +51,15 @@ function Projects(props) {
         puzzles have been created and garnered 400k+ downloads. Firebase has been integrated 
         to provide a leaderboard for timed speedruns. Steam and Patreon OAuth API have also been 
         utilized to automatically provide authentication for patrons to receive extra 
-        ingame items. I will continue to develop maps as long as there are interesting 
-        ideas and fan interest.`,
+        ingame items. I will be developing more maps as there are plenty fun and interesting 
+        level designs to provide enjoyment for others. Example gameplay below 
+        (warning: strong language)`,
       stack: {
         Front: ['XML', 'CSS', 'JavaScript'],
         Back: ['Lua'],
         Apps: ['Firebase', 'Patreon', 'Steam'],
       },
+      link: ['View Gameplay', 'http://youtu.be/WM5hluQtQ7M'],
       github: 'https://github.com/E-Feng/DOTA_Escape1',
     },
   ];
@@ -67,6 +74,7 @@ function Projects(props) {
         github={proj.github}
         key={proj.github}
         siteURL={proj.siteURL}
+        link={proj.link}
       />
     );
   });

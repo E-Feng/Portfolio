@@ -20,6 +20,7 @@
 /api/config/.env.development.local
 /api/config/.env.test.local
 /api/config/.env.production.local
+/api/config/*.json
 
 /client/.env
 /client/.env.local

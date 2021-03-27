@@ -17,6 +17,7 @@ function About(props) {
     'Postgresql',
     'MongoDB',
     'Docker',
+    'Airflow',
     'MATLAB'
   ];
   const skillList = skillData.map(skill => {

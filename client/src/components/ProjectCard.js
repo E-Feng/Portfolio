@@ -8,6 +8,8 @@ function ProjectCard(props) {
     return <StackItem title={tech} list={props.stack[tech]} key={tech} />;
   });
 
+  const hasLink = props.link;
+
   return (
     <Container>
       <ProjImg src={props.imgsrc} />
@@ -17,8 +19,9 @@ function ProjectCard(props) {
         <Stack>{stackList}</Stack>
       </Body>
       <Links>
+        {hasLink && <SiteButton href={props.link[1]}>{props.link[0]}</SiteButton>}
         <SiteButton href={props.siteURL}>View Site</SiteButton>
-        <a href={props.github}>View GitHub</a>
+        <SiteButton href={props.github}>View GitHub</SiteButton>
       </Links>
     </Container>
   );
