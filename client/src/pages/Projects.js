@@ -32,11 +32,11 @@ function Projects(props) {
         games and color coded tables to show teams strengths and weaknesses. This project 
         was first written in vanilla javascript using Windows scheduler to run Python scripts 
         and using Github as a pseudo database. Later it was fully rewritten using React, Apache 
-        Airflow, Firebase, and hosted on Google Cloud Platform using Docker containers to adapt 
-        to new technologies.`,
+        Airflow, BigQuery, Firebase, and hosted on Google Cloud Platform using Docker containers 
+        to adapt to new technologies.`,
       stack: {
         Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-        Back: ['Python', 'Airflow', 'Firebase'],
+        Back: ['Python', 'Airflow', 'BigQuery', 'Firebase'],
         DevOps: ['Docker', 'GCP'],
       },
       github: 'https://github.com/E-Feng/FantasyBBallAnalytics',
