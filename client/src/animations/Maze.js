@@ -136,6 +136,11 @@ function Maze(p5) {
     current.visited = true;
     current.draw(drawNone, fillColor, 'black');
     nVisited++;
+
+    // Drawing the border
+    p5.stroke(255);
+    p5.noFill();
+    p5.rect(0, 0, inWidth, inHeight);
   }
 
   p5.setup = () => {
@@ -147,9 +152,9 @@ function Maze(p5) {
     );
 
     p5.createCanvas(width, height);
+    p5.translate(tWidth, tHeight);
     p5.background(0);
     p5.frameRate(30);
-    p5.translate(tWidth, tHeight);
 
     initMaze(inWidth, inHeight);
   };
