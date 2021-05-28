@@ -22,44 +22,6 @@ function Patreon(props) {
   const patreonURL =
     baseURL + '&client_id=' + clientID + '&redirect_uri=' + redirectURL;
 
-  async function fetchSteamUser() {
-    if (userData[0] === false) {
-      try {
-        const res = await fetch('/auth/steam/account');
-        const json = await res.json();
-
-        console.log(json);
-
-        if (json !== null) {
-          setUser([true, userData[1]]);
-          setUsername(json.displayName);
-          setId(json.id);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  }
-
-  async function fetchPatreonUser() {
-    if (userData[1] === false) {
-      try {
-        const res = await fetch('/auth/patreon/account');
-        const json = await res.json();
-
-        console.log(json);
-
-        if (json !== null) {
-          setUser([userData[0], true]);
-          setPatreonEmail(json.email);
-          setPatreonId(json.Id);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  }
-
   async function finalize() {
     try {
       const res = await fetch('/auth/firebase/');
@@ -74,11 +36,49 @@ function Patreon(props) {
   }
 
   useEffect(() => {
+    async function fetchSteamUser() {
+      if (userData[0] === false) {
+        try {
+          const res = await fetch('/auth/steam/account');
+          const json = await res.json();
+
+          console.log(json);
+
+          if (json !== null) {
+            setUser([true, userData[1]]);
+            setUsername(json.displayName);
+            setId(json.id);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
     fetchSteamUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userData[0]]);
 
   useEffect(() => {
+    async function fetchPatreonUser() {
+      if (userData[1] === false) {
+        try {
+          const res = await fetch('/auth/patreon/account');
+          const json = await res.json();
+
+          console.log(json);
+
+          if (json !== null) {
+            setUser([userData[0], true]);
+            setPatreonEmail(json.email);
+            setPatreonId(json.Id);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
     fetchPatreonUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userData[1]]);
 
   return (
