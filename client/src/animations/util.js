@@ -1,6 +1,6 @@
 export function getCanvasDims() {
-  const canvasDiv = document.getElementsByClassName('p5Canvas')[0]
-    .parentElement;
+  const canvasDiv =
+    document.getElementsByClassName('p5Canvas')[0].parentElement;
   canvasDiv.style.display = 'flex';
 
   // Calculating proper canvas height using children of root
@@ -40,4 +40,11 @@ export function roundDownToS(val, s) {
 
 export function oppositeSign(a, b) {
   return a < 0 ? b > 0 : b < 0;
+}
+
+export function hasClickedInCanvas(x, y, inWidth, inHeight, tWidth, tHeight) {
+  const xInside = x > tWidth && x < inWidth + tWidth;
+  const yInside = y > tHeight && y < inHeight + tHeight;
+
+  return xInside && yInside;
 }
