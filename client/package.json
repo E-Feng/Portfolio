@@ -12,10 +12,10 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-hook-form": "^4.10.2",
-    "react-p5-wrapper": "^2.4.0",
-    "react-router-dom": "^5.2.0",
+    "react-p5-wrapper": "^2.4.1",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
