@@ -27,17 +27,17 @@ function Projects(props) {
       title: 'Fantasy Basketball Analytics',
       imgsrc: '/previews/fantasy.gif',
       desc: `My first and personal project involving my hobby of basketball and fantasy sports. 
-        Using the statistics provided by ESPN, I created some useful and interesting 
+        Using the API provided by ESPN, I created an ETL datapipeline to create interesting 
         visuals to provide better informed decisions. These include daily alerts of high scoring 
         games and color coded tables to show teams strengths and weaknesses. This project 
-        was first written in vanilla javascript using Windows scheduler to run Python scripts 
-        and using Github as a pseudo database. Later it was fully rewritten using React, Apache 
-        Airflow, BigQuery, Firebase, and hosted on Google Cloud Platform using Docker containers 
-        to adapt to new technologies.`,
+        was first written in vanilla javascript using Windows scheduler to run Python scripts. 
+        Later it was fully rewritten using modern web designs and serverless methods with 
+        React, Apache Airflow, Lambda, DynamoDB, and hosted on Google Cloud Platform using 
+        Docker containers.`,
       stack: {
         Front: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-        Back: ['Python', 'Airflow', 'BigQuery', 'Firebase'],
-        DevOps: ['Docker', 'GCP'],
+        Back: ['Python', 'Airflow', 'Lambda', 'DynamoDB', 'Firebase'],
+        DevOps: ['Docker', 'GCP', 'AWS'],
       },
       github: 'https://github.com/E-Feng/FantasyBBallAnalytics',
       siteURL: 'http://fantasy.elvinfeng.com',
@@ -47,8 +47,8 @@ function Projects(props) {
       imgsrc: '/previews/escape.png',
       desc: `Escape the Undying Dead is a series of custom game mods created in Dota 2. 
         It is a co-op escape game relying on pattern recognition, reflexes, and teamwork 
-        to dodge obstacles and solve puzzles. Three full maps of interesting and fun 
-        puzzles have been created and garnered 400k+ downloads. Firebase has been integrated 
+        to dodge obstacles and solve puzzles. Four full maps of interesting and fun 
+        puzzles have been created and garnered 500k+ downloads. Firebase has been integrated 
         to provide a leaderboard for timed speedruns. Steam and Patreon OAuth API have also been 
         utilized to automatically provide authentication for patrons to receive extra 
         ingame items. I will be developing more maps as there are plenty fun and interesting 
