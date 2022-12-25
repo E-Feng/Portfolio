@@ -16,7 +16,7 @@
     "fetch": "^1.1.0",
     "googleapis": "^67.1.1",
     "mongoose": "^5.13.14",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "openid-client": "^5.3.1",
     "passport": "^0.6.0",
     "passport-steam": "^1.0.17"
