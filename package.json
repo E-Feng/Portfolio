@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd api && npm run server\" \"cd client && npm start\" "
+    "dev": "concurrently \"cd api && npm run server\" \"cd client && npm start\" ",
+    "deployClient": "\" cd client && docker build . -t elvinfeng/portfolio:client && docker push elvinfeng/portfolio:client\"",
+    "deployServer": "\" cd api && docker build . -t elvinfeng/portfolio:server && docker push elvinfeng/portfolio:server\""
   },
   "repository": {
     "type": "git",
