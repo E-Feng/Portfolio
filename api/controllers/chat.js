@@ -24,9 +24,10 @@ const getGoogleApiToken = async () => {
 // access Public
 exports.addChat = async (req, res) => {
   try {
+    const year = '2023';
     const date = req.body.date;
     const time = req.body.time;
-    const url = `https://fantasy-cc6ec-default-rtdb.firebaseio.com/data/messageboard/${date}/${time}.json`;
+    const url = `https://fantasy-cc6ec-default-rtdb.firebaseio.com/v1/${year}/common/messageboard/${date}/${time}.json`;
 
     const token = await getGoogleApiToken();
     const resFirebase = await fetch(url, {
